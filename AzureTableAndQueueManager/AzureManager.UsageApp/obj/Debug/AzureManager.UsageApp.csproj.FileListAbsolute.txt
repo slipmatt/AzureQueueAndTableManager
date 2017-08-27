@@ -1,0 +1,10 @@
+C:\Users\Aspire\Documents\Visual Studio 2015\Repos\AzureTableAndQueueManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\ConsoleApplication1.exe
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\AzureManager.dll
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\bin\Debug\AzureManager.pdb
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\obj\Debug\AzureManager.UsageApp.csprojResolveAssemblyReference.cache
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\obj\Debug\ConsoleApplication1.exe
+C:\Users\Aspire\Source\Repos\AzureQueueAndTableManager\AzureTableAndQueueManager\AzureManager.UsageApp\obj\Debug\ConsoleApplication1.pdb

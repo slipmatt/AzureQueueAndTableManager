@@ -1,0 +1,1 @@
+C:\Users\Aspire\Documents\Visual Studio 2015\Repos\InteractiveSolutionsMVCAssessment\AzureTableAndQueueManager\AzureTableAndQueueManager\bin\Debug\AzureTableAndQueueManager.exe.config
