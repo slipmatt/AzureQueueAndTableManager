@@ -11,7 +11,7 @@ using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
 
 namespace AzureManager
 {
-    public class TableManager : ITableManager
+    public class TableManager<T> : ITableManager<T> where T : class
     {
         private static CloudStorageAccount _storageAccount;
         private static CloudTableClient _tableClient;
@@ -34,36 +34,36 @@ namespace AzureManager
             _table.CreateIfNotExists();
         }
 
-        public void Write(MyEntity entity)
+        public void Write(T entity)
         {
+
             // Create the TableOperation object that inserts the entity.
-            var operation = TableOperation.Insert(entity);
+
+            var operation = TableOperation.Insert((ITableEntity) entity);
 
             // Execute the insert operation.
             _table.Execute(operation);
         }
 
-        public void Update(MyEntity entity)
+        public void Update(T entity)
         {
-            entity.ETag = "*";
-            var operation = TableOperation.Replace(entity);
+            var thisEntity = (ITableEntity) entity;
+            thisEntity.ETag = "*";
+            var operation = TableOperation.Replace(thisEntity);
             _table.Execute(operation);
         }
 
-        public void Delete(MyEntity entity)
+        public void Delete(T entity)
         {
-            var item = new MyEntity(Guid.Parse(entity.PartitionKey), entity.TrackId)
-            {
-                ETag = "*"
-            };
-            var operation=TableOperation.Delete(entity);
+            var thisEntity = (ITableEntity)entity;
+            thisEntity.ETag = "*";
+            var operation=TableOperation.Delete(thisEntity);
             _table.Execute(operation);
         }
 
-        public void GetByTrackId(int trackId)
+        public TableQuery<T> Search(string field,int fieldValue)
         {
-            // Construct the query operation for all customer entities where PartitionKey="Smith".
-            TableQuery<MyEntity> query = new TableQuery<MyEntity>().Where(TableQuery.GenerateFilterCondition("TrackId", QueryComparisons.Equal, "5"));
+            TableQuery<T> query = new TableQuery<T>().Where(TableQuery.GenerateFilterCondition(field, QueryComparisons.Equal, fieldValue.ToString()));
             return query;
         }
     }

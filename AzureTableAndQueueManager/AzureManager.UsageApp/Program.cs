@@ -33,7 +33,7 @@ namespace AzureManager.UsageApp
                 ETag = "*"
             };
             Console.WriteLine("Table CreateIfExists Executing");
-            var tm = new TableManager("TestTable");
+            var tm = new TableManager<MyEntity>("TestTable");
             Console.WriteLine("Table CreateIfExists Done");
             Console.WriteLine("Record Write Executing");
             tm.Write(entity);
