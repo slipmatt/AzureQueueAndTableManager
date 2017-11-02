@@ -42,6 +42,9 @@ namespace AzureManager.UsageApp
             entity.TrackId = 6;
             tm.Update(entity);
             Console.WriteLine("Record Update Done");
+            Console.WriteLine("Record Search Executing");
+            var search = tm.Search("TrackId", 6);
+            Console.WriteLine("Record Search Done");
             Console.WriteLine("Record Delete Executing");
             tm.Delete(entity);
             Console.WriteLine("Record Delete Done");

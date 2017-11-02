@@ -8,6 +8,7 @@ using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
 using System.Configuration;
+using Newtonsoft.Json;
 
 namespace AzureManager
 {
@@ -33,13 +34,13 @@ namespace AzureManager
             _queue.CreateIfNotExists();
         }
 
-        public static Task AddMessage(string Message)
+        public static Task AddMessage(object messageObject)
         {
 
             _queue = _queueClient.GetQueueReference(ConfigurationManager.AppSettings["QueueName"]);
-            CloudQueueMessage message = new CloudQueueMessage(Message);
-            // Add the message to the queue
-            return _queue.AddMessageAsync(message);
+            string serializedMessage = JsonConvert.SerializeObject(messageObject);
+            CloudQueueMessage cloudQueueMessage = new CloudQueueMessage(serializedMessage);
+            return _queue.AddMessageAsync(cloudQueueMessage);
         }
 
         public static string PeekMessage()

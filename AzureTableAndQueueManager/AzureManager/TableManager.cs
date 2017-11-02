@@ -61,9 +61,11 @@ namespace AzureManager
             _table.Execute(operation);
         }
 
-        public TableQuery<T> Search(string field,int fieldValue)
+         TableQuery<T> ITableManager<T>.Search(string field, int fieldValue)
         {
+            
             TableQuery<T> query = new TableQuery<T>().Where(TableQuery.GenerateFilterCondition(field, QueryComparisons.Equal, fieldValue.ToString()));
+          // var result = _table.ExecuteQuery(query).ToList();
             return query;
         }
     }

@@ -9,6 +9,5 @@ namespace AzureManager
         TableQuery<T> Search(string field, int fieldValue);
         void Update(T entity);
         void Write(T entity);
-
     }
 }
